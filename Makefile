@@ -31,6 +31,7 @@ pypi: dist
 	twine upload --repository pypi dist/*
 
 dist: clean
+	nbdev_bump_version
 	python setup.py sdist bdist_wheel
 
 clean:
