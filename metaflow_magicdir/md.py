@@ -31,7 +31,7 @@ def magicdir(_func=None, *, dir):
     return func
 
 # Cell
-def extract_magicdir(data:MetaflowData) -> None:
+def extract_magicdir(data:MetaflowData, path:str='.') -> None:
     "Extract `magicdir` into current directory."
     if not isinstance(data, MetaflowData):
         raise ValueError(f'data must be of type `MetaflowData, got {type(data)} instead')
@@ -39,4 +39,4 @@ def extract_magicdir(data:MetaflowData) -> None:
         raise ExtractError(f"Did not find magicdir attribute in metadata.")
     buf = BytesIO(data.magicdir)
     with TarFile(mode='r', fileobj=buf) as tar:
-        tar.extractall()
+        tar.extractall(path=path)
