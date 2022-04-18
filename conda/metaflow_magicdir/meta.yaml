@@ -1,0 +1,34 @@
+package:
+  name: metaflow_magicdir
+  version: 0.0.1
+source:
+  sha256: bcaeae131adb04cc3f56ba24e3fea418d30fd6eefd39b78310f8ef2b6a5ebf42
+  url: https://files.pythonhosted.org/packages/b5/d7/1fa44d5fb7270ff58884fc7a13182d2fa112a8316196f546b8386023f21f/metaflow_magicdir-0.0.1.tar.gz
+about:
+  dev_url: https://Outerbounds.github.io
+  doc_url: https://Outerbounds.github.io
+  home: https://Outerbounds.github.io
+  license: Apache Software
+  license_family: APACHE
+  summary: '"Save Entire Directories Into Metaflow''s Metadata Store"'
+build:
+  noarch: python
+  number: '0'
+  script: '{{ PYTHON }} -m pip install . -vv'
+extra:
+  recipe-maintainers:
+  - Outerbounds
+requirements:
+  host:
+  - pip
+  - python
+  - packaging
+  - metaflow
+  run:
+  - pip
+  - python
+  - packaging
+  - metaflow
+test:
+  imports:
+  - metaflow_magicdir
